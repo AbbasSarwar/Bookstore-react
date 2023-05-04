@@ -4,13 +4,18 @@
     box-sizing: border-box;
 }
 body {
-    background-color: rgb(251, 246, 246);
+    background-color: #f2f3f7;
 }
 .main {
     padding: 50px;
     margin: 0;
 }
 .main-container {
-    background-color: aliceblue;
-    height: 100vh;
+    background-color: #fafafa;
+    height: 100%;
+    box-shadow: 0 1px 15px 1px rgb(184, 178, 178);
+}
+
+nav .active {
+    color: rgb(44, 44, 207) !important;
 }

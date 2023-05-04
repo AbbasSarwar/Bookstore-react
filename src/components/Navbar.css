@@ -6,6 +6,10 @@ header {
     padding: 30px 35px;
     background-color: #fff;
 }
+
+header a {
+    text-decoration: none;
+}
 .header-container1 {
     display: flex;
     flex-direction: row;
@@ -31,12 +35,8 @@ header {
     padding: 5px 20px;
 }
 
-Link {
-    text-decoration: none;
-    color: black;
-}
 
 .header-container2 svg{
     color: #0361ee;
-    font-size: 30px;
+    font-size: 35px;
 }
