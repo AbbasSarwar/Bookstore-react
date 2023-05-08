@@ -1,6 +1,11 @@
-const Catogeries = () => (
-  <div className="Catogery-container">
-    <h1>Catogeries are in process</h1>
-  </div>
-);
+import { useSelector } from 'react-redux';
+
+const Catogeries = () => {
+  const updateStatus = useSelector((state) => state.catogery);
+  return (
+    <div className="Catogery-container">
+      <h1>{updateStatus.status}</h1>
+    </div>
+  );
+};
 export default Catogeries;

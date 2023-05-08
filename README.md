@@ -58,7 +58,7 @@
 - **[Setup ]**
 - **[UI Design]**
 - **[Routing Pages]**
-
+- **[Added Reducers]**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
