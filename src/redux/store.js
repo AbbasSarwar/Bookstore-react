@@ -4,7 +4,7 @@ import CatogerySlice from './Catogeries/CatogerySlice';
 
 const Store = configureStore({
   reducer: {
-    book: booklists,
+    book: booklists.reducer,
     catogery: CatogerySlice,
 
   },

@@ -59,6 +59,8 @@
 - **[UI Design]**
 - **[Routing Pages]**
 - **[Added Reducers]**
+- **[Updating Items]**
+- **[Booklist initiate]**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
