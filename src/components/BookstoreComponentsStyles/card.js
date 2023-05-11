@@ -1,12 +1,32 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import Button from './button';
-import { removeBook } from '../../redux/books/bookSlice';
+import { removeBooks, FetchData } from '../../redux/books/API';
 
 const Card = () => {
+  const { Booklist, status, error } = useSelector((state) => state.book);
   const Dispatch = useDispatch();
-  const Booklists = useSelector((state) => state.book.Booklist);
+  useEffect(() => {
+    Dispatch(FetchData());
+  }, [Dispatch]);
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (Booklist.length === 0) {
+    return <div>Empty</div>;
+  }
+
+  if (status === 'failed') {
+    return (
+      <div>
+        Error:
+        {error}
+      </div>
+    );
+  }
   return (
-    Booklists.map((cur) => (
+    Booklist.map((cur) => (
       <div className="card-container" key={cur.item_id}>
         <div className="card-details">
           <div className="min1">
@@ -18,7 +38,7 @@ const Card = () => {
               <a
                 href="/"
                 onClick={(e) => {
-                  Dispatch(removeBook(cur.item_id));
+                  Dispatch(removeBooks(cur.item_id));
                   e.preventDefault();
                 }}
               >
