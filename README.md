@@ -61,6 +61,8 @@
 - **[Added Reducers]**
 - **[Updating Items]**
 - **[Booklist initiate]**
+- **[Updating to API]**
+- **[Productive Design]**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -105,8 +107,7 @@ In order to run this project you need:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Functionallities]**
-- [ ] **[Interface]**
+- [ ] **[Enhancement Updates]**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
