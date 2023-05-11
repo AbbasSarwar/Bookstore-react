@@ -1,46 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { FetchData, addBooks, removeBooks } from './API';
 
 const initialState = {
-  Booklist: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-      Percentage: '10%',
-      Chapter: '17',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-      Percentage: '0%',
-      Chapter: 'Introduction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-      Percentage: '90%',
-      Chapter: 'The last',
-    },
-  ],
+  Booklist: [],
+  status: 'idle',
+  error: null,
 };
 
 export const booklists = createSlice({
-  name: 'bookLists',
+  name: 'Booklist',
   initialState,
-  reducers: {
-    addBook: (state, action) => {
-      state.Booklist.push(action.payload);
-    },
-    removeBook: (state, action) => {
-      state.Booklist = state.Booklist.filter((book) => book.item_id !== action.payload);
-    },
+  reducers: {},
+  extraReducers(builder) {
+    builder
+      .addCase(FetchData.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(FetchData.fulfilled, (state, action) => {
+        state.status = 'Succeeded';
+        state.Booklist = action.payload;
+      })
+      .addCase(FetchData.rejected, (state, action) => {
+        state.status = 'Failed';
+        state.error = action.error.message;
+      })
+      .addCase(addBooks.fulfilled, (state, action) => {
+        state.Booklist.push(action.payload);
+      })
+      .addCase(removeBooks.fulfilled, (state, action) => {
+        state.Booklist = state.Booklist.filter((book) => book.item_id !== action.payload);
+      });
   },
 });
 
-export const { addBook, removeBook } = booklists.actions;
 export default { booklists };

@@ -1,7 +1,7 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { addBook } from '../../redux/books/bookSlice';
+import { addBooks } from '../../redux/books/API';
 
 const Form = () => {
   const Dispatch = useDispatch();
@@ -23,12 +23,21 @@ const Form = () => {
     });
   };
   const DataHandling = () => {
-    Dispatch(addBook(Data));
+    const BookData = {
+      item_id: nanoid(),
+      title: Data.title,
+      author: Data.author,
+      category: 'Science Fiction',
+      Chapter: 'Introduction',
+      Percentage: '0%',
+    };
+    Dispatch(addBooks(BookData));
     setData({
       title: '',
       author: '',
     });
   };
+
   return (
     <div className="form">
       <h1>ADD NEW BOOK</h1>
