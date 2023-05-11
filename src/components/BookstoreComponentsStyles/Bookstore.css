@@ -170,11 +170,12 @@ form input[type="button"] {
   border-radius: 3px;
   flex: 1;
   font-size: 14px;
-  transition: .5s;
+  transition: 0.5s;
 }
+
 form input[type="button"]:hover {
   background-color: #78abe1;
-  color: #fff; 
+  color: #fff;
 }
 
 form input:focus {
@@ -182,7 +183,7 @@ form input:focus {
   border-color: blue;
 }
 
-.lastinp{
+.lastinp {
   flex: 2;
   border: 0.2px solid rgb(209, 208, 208);
   font-size: 18px;
