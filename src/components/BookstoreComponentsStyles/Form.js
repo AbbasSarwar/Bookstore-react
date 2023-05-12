@@ -8,7 +8,6 @@ const Form = () => {
   const [Data, setData] = useState({
     title: '',
     author: '',
-    catogery: 'Science',
     Chapter: '10',
     item_id: nanoid(),
   });
@@ -19,19 +18,23 @@ const Form = () => {
       item_id: nanoid(),
       Chapter: 'Introduction',
       Percentage: '0%',
-      catogery: 'new',
+      catogory: 'new',
     });
   };
-  const DataHandling = () => {
+  const DataHandling = (e) => {
     const BookData = {
       item_id: nanoid(),
       title: Data.title,
       author: Data.author,
-      category: 'Science Fiction',
+      category: 'new',
       Chapter: 'Introduction',
       Percentage: '0%',
     };
-    Dispatch(addBooks(BookData));
+    if (BookData.title === '' || BookData.author === '') {
+      e.preventDefault();
+    } else {
+      Dispatch(addBooks(BookData));
+    }
     setData({
       title: '',
       author: '',
@@ -43,7 +46,7 @@ const Form = () => {
       <h1>ADD NEW BOOK</h1>
       <form>
         <input type="text" name="title" onChange={updateData} value={Data.title} required placeholder="Book title" />
-        <input type="text" name="author" onChange={updateData} value={Data.author} required placeholder="Authors" />
+        <input type="text" name="author" className="lastinp" onChange={updateData} value={Data.author} required placeholder="Authors" />
         <input type="button" value="ADD BOOK" onClick={DataHandling} />
       </form>
     </div>

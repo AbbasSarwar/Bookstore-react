@@ -11,7 +11,7 @@
   background-color: #fff;
   padding: 20px 20px;
   border-radius: 5px;
-  border: 0.3px solid black;
+  border: 0.3px solid rgb(227, 225, 225);
 }
 
 .card-details {
@@ -43,23 +43,25 @@
   padding: 0 5px;
 }
 
-.min1 p {
-  color: rgb(124, 124, 235);
-  padding: 5px 0;
-  transition: 0.5s;
-}
-
 .min1 p:first-child {
   color: #a8a4a4;
   font-weight: 600;
 }
 
+.author {
+  color: #8aaed2;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 100;
+}
+
 .min1 a:first-child {
   border-right: 2px solid rgb(151, 147, 147);
+  padding-right: 15px;
 }
 
 .min1 a:last-child {
   border-left: 2px solid rgb(151, 147, 147);
+  padding-left: 15px;
 }
 
 .min1 a:hover {
@@ -161,13 +163,19 @@ form input {
   border-radius: 3px;
 }
 
-form input[type="submit"] {
+form input[type="button"] {
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 3px;
   flex: 1;
   font-size: 14px;
+  transition: 0.5s;
+}
+
+form input[type="button"]:hover {
+  background-color: #78abe1;
+  color: #fff;
 }
 
 form input:focus {
@@ -175,7 +183,7 @@ form input:focus {
   border-color: blue;
 }
 
-form select {
+.lastinp {
   flex: 2;
   border: 0.2px solid rgb(209, 208, 208);
   font-size: 18px;
@@ -183,9 +191,4 @@ form select {
   font-family: serif;
   padding: 0 8px;
   border-radius: 3px;
-}
-
-form select:focus {
-  outline: #007bff;
-  border-color: blue;
 }

@@ -30,9 +30,9 @@ const Card = () => {
       <div className="card-container" key={cur.item_id}>
         <div className="card-details">
           <div className="min1">
-            <p>{cur.catogery}</p>
+            <p>{cur.category}</p>
             <h3>{cur.title}</h3>
-            <p>{cur.author}</p>
+            <p className="author">{cur.author}</p>
             <div className="btns-func">
               <a href="/">Comments</a>
               <a
